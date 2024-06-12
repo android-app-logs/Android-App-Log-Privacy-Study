@@ -1,0 +1,611 @@
+Log File,App Name,Third Party,Data Structure,Level
+com.amazon.avod.thirdpartyclient,amazonPrimeVideo,N/A,JSON,D
+com.amazon.mShop.android.shopping,amazonShopping,N/A,URL,D
+com.amazon.mShop.android.shopping,amazonShopping,N/A,URL,D
+com.amazon.mShop.android.shopping,amazonShopping,N/A,Mixed,D
+com.amazon.mShop.android.shopping,amazonShopping,N/A,Single Variable,D
+com.amazon.mShop.android.shopping,amazonShopping,N/A,Single Variable,D
+com.arlo.app,arlo,N/A,Single Variable,D
+com.arlo.app,arlo,N/A,URL,D
+com.arlo.app,arlo,N/A,URL,D
+com.arlo.app,arlo,N/A,URL,D
+com.bbm,bbm,N/A,Single Variable,D
+com.bfs.papertoss,papertoss,N/A,Equation,V
+com.bfs.papertoss,papertoss,N/A,Equation,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,Equation,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.bfs.papertoss,papertoss,N/A,JSON,V
+com.dianxinos.dxbs,duBatterySaver,N/A,URL,I
+com.dianxinos.dxbs,duBatterySaver,N/A,URL,W
+com.fox.now,foxNow,N/A,Array,I
+com.foxsports.android,foxSports,N/A,Equation,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Equation,I
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Equation,I
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,JSON,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Equation,I
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,URL,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gau.go.launcherex.gowidget.weatherwidget,goWeather,N/A,Data Stream,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,I
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,URL,W
+com.gonoodle.gonoodle,goNoodle,N/A,URL,W
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,D
+com.gonoodle.gonoodle,goNoodle,N/A,Equation,I
+com.gonoodle.gonoodle,goNoodle,N/A,Array,I
+com.gonoodle.gonoodle,goNoodle,N/A,Parameters,E
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,Equation,W
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,W
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,W
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,URL,I
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,W
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,D
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,Single Variable,E
+com.gonoodle.gonoodle,goNoodle,N/A,Mixed,W
+com.google.android.apps.youtube.kids,youtubeKids,N/A,URL,W
+com.gotv.nflgamecenter.us.lite,nfl,N/A,Array,I
+com.gotv.nflgamecenter.us.lite,nfl,N/A,Array,I
+com.gotv.nflgamecenter.us.lite,nfl,N/A,Single Variable,D
+com.gotv.nflgamecenter.us.lite,nfl,N/A,Single Variable,D
+com.indeed.android.jobsearch,indeed,N/A,Single Variable,I
+com.indeed.android.jobsearch,indeed,N/A,Single Variable,D
+com.indeed.android.jobsearch,indeed,N/A,Single Variable,D
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,W
+com.konylabs.capitalone,capitalOneMobile,Localytics,URL,W
+com.konylabs.capitalone,capitalOneMobile,Localytics,URL,W
+com.konylabs.capitalone,capitalOneMobile,Localytics,URL,W
+com.konylabs.capitalone,capitalOneMobile,Localytics,Mixed,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,Localytics,Equation,D
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,JSON,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,D
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,W
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,E
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,E
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,E
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,E
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,E
+com.konylabs.capitalone,capitalOneMobile,N/A,Single Variable,W
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,I
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,I
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,D
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,D
+com.konylabs.capitalone,capitalOneMobile,N/A,Array,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Array,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Array,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Array,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Array,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Array,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Array,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Array,I
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,I
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,W
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Mixed,D
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Mixed,D
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,I
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,W
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Mixed,D
+com.konylabs.capitalone,capitalOneMobile,N/A,URL,I
+com.konylabs.capitalone,capitalOneMobile,N/A,Mixed,D
+com.konylabs.capitalone,capitalOneMobile,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Single Variable,I
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Equation,D
+com.lime.video.player,limePlayer,N/A,Equation,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Equation,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Equation,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,URL,W
+com.lime.video.player,limePlayer,N/A,URL,W
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Mixed,D
+com.lime.video.player,limePlayer,N/A,Equation,I
+com.lime.video.player,limePlayer,N/A,Array,I
+com.lime.video.player,limePlayer,N/A,Parameters,E
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,Equation,W
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,W
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,W
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,URL,I
+com.lime.video.player,limePlayer,N/A,Mixed,W
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,D
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,Single Variable,E
+com.lime.video.player,limePlayer,N/A,Mixed,W
+com.naver.linewebtoon,webtoon,N/A,URL,D
+com.naver.linewebtoon,webtoon,N/A,URL,D
+com.naver.linewebtoon,webtoon,N/A,URL,D
+com.naver.linewebtoon,webtoon,N/A,URL,D
+com.naver.linewebtoon,webtoon,N/A,URL,D
+com.naver.linewebtoon,webtoon,N/A,URL,D
+com.pandora.android,pandora,N/A,Array,I
+com.pandora.android,pandora,N/A,Equation,I
+com.particlenews.newsbreak,newsBreak,N/A,URL,I
+com.pinterest,pinterest,N/A,Array,I
+com.pof.android,plentyOfFish,N/A,Single Variable,D
+com.pof.android,plentyOfFish,N/A,Single Variable,D
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.postmates.android,postmates,N/A,JSON,I
+com.sec.android.easyMover,samsungSmartSwitch,N/A,JSON,D
+com.sec.android.easyMover,samsungSmartSwitch,N/A,JSON,D
+com.smule.singandroid,smule,N/A,URL,E
+com.smule.singandroid,smule,N/A,Single Variable,W
+com.squareup.cash,squareup,N/A,Mixed,D
+com.squareup.cash,squareup,N/A,Single Variable,D
+com.squareup.cash,squareup,N/A,Single Variable,D
+com.squareup.cash,squareup,N/A,Mixed,D
+com.squareup.cash,squareup,N/A,Mixed,D
+com.ticketmaster.mobile.android.na,ticketmaster,N/A,URL,E
+com.ticketmaster.mobile.android.na,ticketmaster,N/A,Single Variable,W
+com.topfreegames.bikeracefreeworld,bikeRace,N/A,URL,I
+com.UCMobile.intl,ucBrowser,N/A,Mixed,I
+com.UCMobile.intl,ucBrowser,N/A,Mixed,I
+com.venmo,venmo,N/A,JSON,D
+com.venmo,venmo,N/A,JSON,D
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Equation,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,JSON,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Single Variable,I
+com.weather.Weather,weather,N/A,Array,I
+com.weather.Weather,weather,N/A,Array,I
+com.whatsapp.app,whatsapp,N/A,Mixed,W
+com.whatsapp.app,whatsapp,N/A,Equation,I
+com.whatsapp.app,whatsapp,N/A,Array,I
+com.whatsapp.app,whatsapp,N/A,Parameters,E
+com.whatsapp.app,whatsapp,N/A,Equation,W
+com.yahoo.mobile.client.android.mail,yahoo,N/A,URL,E
+com.yahoo.mobile.client.android.mail,yahoo,N/A,Single Variable,E
+com.zillow.android.zillowmap,zillow,N/A,URL,I
+com.zillow.android.zillowmap,zillow,N/A,Mixed,D
+com.zillow.android.zillowmap,zillow,N/A,Single Variable,D
+com.zillow.android.zillowmap,zillow,N/A,Single Variable,D
+com.zillow.android.zillowmap,zillow,N/A,URL,I
+paint.by.number.pixel.art.coloring.drawing.puzzle,paintByNumber,N/A,URL,I
+paint.by.number.pixel.art.coloring.drawing.puzzle,paintByNumber,N/A,JSON,D
+paint.by.number.pixel.art.coloring.drawing.puzzle,paintByNumber,N/A,Equation,D
+paint.by.number.pixel.art.coloring.drawing.puzzle,paintByNumber,N/A,JSON,D
+scratch.lucky.money.free.real.big.win,luckyMoney,N/A,URL,I
+scratch.lucky.money.free.real.big.win,luckyMoney,N/A,URL,I
+us.ozteam.bigfoot,bigfoot,N/A,URL,I
+us.ozteam.bigfoot,bigfoot,N/A,URL,W

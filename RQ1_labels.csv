@@ -1,0 +1,1123 @@
+Id,Title,Body,Tags,Privacy+Log,Matched
+39383289,"iOS 10 GM release error when submitting apps ""app attempts to access privacy-sensitive data without a usage description"" due to GoogleSignIn, AdMob","<p>I just started facing this issue with the iOS 10 GM release. I received an email saying:</p>
+
+<blockquote>
+  <p>To process your delivery, the following issues must be corrected:</p>
+  
+  <p>This app attempts to access privacy-sensitive data without a usage description. The app's Info.plist must contain an NSCameraUsageDescription key with a string value explaining to the user how the app uses this data.</p>
+  
+  <p>Once the required corrections have been made, you can then redeliver the corrected binary.</p>
+  
+  <p>Regards,</p>
+  
+  <p>The App Store team</p>
+</blockquote>
+
+<p>I am using google GoogleSignIn. I am not using Firebase, but when installing GoogleSignIn with cocoa pods, I saw in the logs it automatically installed Firebase. </p>
+
+<p>Is there something we can do other than having to define these keys as my app has nothing to do with camera / photos etc and hence I don't want users to think we are using them.</p>
+
+<p>I notice someone else has also faced this issue:
+<a href=""https://forums.developer.apple.com/thread/62229"" rel=""noreferrer"">https://forums.developer.apple.com/thread/62229</a></p>
+",|ios|firebase|admob|google-signin|,TRUE,Usage
+40454993,"NSPhotoLibraryUsageDescription key added to info.plist, still crashing due to privacy sensitive data","<p>Trying to follow the FoodTracker Apple tutorial. xCode 8.1. I get this crashlog:</p>
+
+<pre><code>2016-11-06 16:49:17.922832 FoodTracker[2307:660318] [access] This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre>
+
+<p>(lldb) </p>
+
+<p>I have read several posts on missing privacy keys in iOS 10, and so I added the required key...</p>
+
+<p>Privacy - Photo Library Usage Description</p>
+
+<p>...and a custom message under the value column. Yet I still get the same crash when I tap the image. Any help would be great. I would love to finish this tutorial.</p>
+
+<p>Thanks!</p>
+
+<p>INFO:</p>
+
+<p>I cannot include a screenshot of my info.plist yet, so here is the link to a screenshot:</p>
+
+<p><a href=""https://www.dropbox.com/s/wwgz5uca5klxjen/Screen%20Shot%202016-11-06%20at%204.13.56%20PM.png?dl=0"" rel=""nofollow noreferrer"">screenshot of info.plist</a></p>
+
+<p>Here is my ViewController.swift just in case:</p>
+
+<pre><code>import UIKit
+
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+// MARK: Properties
+
+@IBOutlet weak var nameTextField: UITextField!
+@IBOutlet weak var mealNameLabel: UILabel!
+@IBOutlet weak var photoImageView: UIImageView!
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    nameTextField.delegate = self
+}
+
+// MARK: UITextFieldDelegate
+func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool {
+
+    // Hide the keyboard
+    textField.resignFirstResponder()
+
+    return true
+}
+
+func textFieldDidEndEditing(_ textField: UITextField) {
+
+    mealNameLabel.text = textField.text
+}
+
+// MARK: UIImageControllerDelegate
+func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+
+    dismiss(animated: true, completion: (nil))
+}
+
+func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+
+    let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+    photoImageView.image = selectedImage
+    dismiss(animated: true, completion: (nil))
+}
+
+// MARK: Actions
+@IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+
+    nameTextField.resignFirstResponder()
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.sourceType = .photoLibrary
+    imagePickerController.delegate = self
+    present(imagePickerController, animated: true, completion: nil)
+}
+
+@IBAction func setDefaultLabelText(_ sender: UIButton) {
+
+    mealNameLabel.text = ""Default Text""
+}
+}
+</code></pre>
+",|ios|swift|xcode|info.plist|,TRUE,Usage
+39678071,iOS 10: sharing image/save image started crashing,"<p>I have a code which shares a line of text and an image via UIActivityViewController. After I updated to iOS 10 it started crashing with the following log: </p>
+
+<blockquote>
+  <p>This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.</p>
+</blockquote>
+
+<p>I do not post the code since it seems to happen even in Apple's own example. I found a corresponding <a href=""https://openradar.appspot.com/27988819"" rel=""nofollow noreferrer"">radar</a>, but not StackOverflow topic. </p>
+
+<p>Hope it will save someone's time. The fix is to add that line to your plist even though the app itself does not interact with the Photo Library. If anyone finds a better solution, it would be nice.</p>
+
+<p>Please, note that it is different from a <a href=""https://stackoverflow.com/questions/37925583/uiimagepickercontroller-crashes-app-swift3-xcode8"">problem with UIImagePickerController</a> - it is close to an opposite action. </p>
+",|ios|share|uiactivityviewcontroller|,TRUE,Usage
+39695161,ionic 2 image-picker xcode 8 upgrade - Info.plist permissions error,"<p>Just upgraded to xcode 8 and it appears to break my app on open album, see below for error log. I have uninstalled and installed a number of times, also tried updating my ionic install.</p>
+
+<blockquote>
+  <p>NOTE: After the xcode 8 upgrade, i had to reinstall ios-sim &amp;
+  ios-deploy (again) as it wasn't being found.</p>
+</blockquote>
+
+<pre><code>ccd[1426]: [access] Refusing TCCAccessRequest for service kTCCServicePhotos and client /Users//Library/Developer/CoreSimulator/Devices/268F812D-B91E-40A2-943B-7DCF6548CF18/data/Containers/Bundle/Application/2FCEDD36-41B6-47A8-B49D-49DC356DA9C3/myAPP_V2.app/myAPP_V2 without NSPhotoLibraryUsageDescription key
+
+V2[1491]: [access] This app has crashed because it attempted to access privacy-sensitive data without a usage description. The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre>
+",|iphone|ionic-framework|ionic2|xcode8|,TRUE,Usage
+39918242,"Using iOS Game Center, with Ejecta.js","<p>I am seeing the following in my console, when I try to use the Ejecta .authenticate([callback]) method.</p>
+
+<p>[MC] System group container for systemgroup.com.apple.configurationprofiles path is /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles</p>
+
+<p>[MC] Reading from public effective user settings.</p>
+
+<p>Anybody know why that is? I believe my provisioning and app id etc to be correct.</p>
+
+<p>I have also read other threads relating to this message log regarding use of other phone peripherals such as the camera. It said these could be fixed by setting a value on privacy in info.plist, but I can not see a key in the list that makes any sense for Game Center.</p>
+",|javascript|ios|xcode|game-center|,TRUE,Usage
+39975320,Unity Prime31 prompt for photo is crashing on iOS 10 and XCode 8,"<p>Calling EtceteraBinding.promptForPhoto resulting in immediate crash on iOS 10.</p>
+
+<pre><code>public void TakePhotoTapped() {
+
+    #if UNITY_IOS
+    EtceteraBinding.promptForPhoto(0.2f, PhotoPromptType.Camera, 0.8f, true);
+    #endif
+
+}
+</code></pre>
+
+<p>Xcode spits out this log. It does look like some sort of permission issue? Please help.</p>
+
+<pre><code>2016-10-11 11:46:35.758167 xxx[1643:458841] invalid mode 'kCFRunLoopCommonModes' provided to CFRunLoopRunSpecific - break on _CFRunLoopError_RunCalledWithInvalidMode to debug. This message will only appear once per execution.
+2016-10-11 11:46:49.760643 xxx[1643:458841] [MC] System group container for systemgroup.com.apple.configurationprofiles path is /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+2016-10-11 11:46:49.768609 xxx[1643:458841] [MC] Reading from public effective user settings.
+2016-10-11 11:47:02.450381 xxx[1643:459135] [access] This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSCameraUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre>
+",|ios|xcode|unity-game-engine|prime31|,TRUE,Usage
+59463291,Is it possible to use S3 bucket logs as a hack for privacy oriented/basic analytics?,"<p>I am looking for a simple, dirt cheap way to do some basic analytics for my site. I really mean basic and something that respects users privacy + does not use cookies.</p>
+
+<p>I was wondering, would it make sense to:<br>
+- just have an s3 bucket with logging enabled<br>
+- place a tiny image there<br>
+- link to the image from my site  </p>
+
+<p>Would the requests for that image get logged to the logs? </p>
+
+<p>I am interested mostly in a ballpark of the page views. I don't care about real-time or same day log delivery (I am most likely to check this one a month). The logs seem to have some nice details like IP address, which can be used for guess-estimating the countries.</p>
+
+<p>However, my question is that amazon states that they do ""A Best Effort Server Log Delivery"". </p>
+
+<p><a href=""https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html"" rel=""nofollow noreferrer"">https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html</a></p>
+
+<p>Based on experience:<br>
+- how good is this best effort and how consistent?<br>
+- What are the odds that this approach works? </p>
+
+<p>Thank you for entertaining the silly idea :) </p>
+",|amazon-web-services|amazon-s3|analytics|,TRUE,Intention
+67463539,Security & Privacy and self-modifying applications,"<p>A friend and I are developing an application with <a href=""https://www.electronjs.org/"" rel=""nofollow noreferrer"">electron</a>. This application has settings which are currently being stored in the application <code>LaunchMenu.app</code>. Within this application we are using the following JXA script to execute keyboard events:</p>
+<pre><code>//JXA send keys
+function sendKeys(sequence){
+  const events = Application(&quot;System Events&quot;);
+  sequence.forEach(data =&gt; {
+    console.log(data.keys);
+    if (&quot;keys&quot; in data) events.keystroke(data.keys, data.modifiers ? {using: data.modifiers} : {});
+    if (&quot;codes&quot; in data) events.keyCode(data.codes, data.modifiers ? {using: data.modifiers} : {});
+  });
+}
+</code></pre>
+<p>The problem is whenever we change a setting, <code>LaunchMenu.app</code> is changing, which is causing the following message to appear whenever a key event message is sent.</p>
+<pre><code>‚ÄúLaunchMenu‚Äú wants access to control ‚ÄúSystem Events‚Äú. Allowing control will provide access to documents and data in ‚ÄúSystem Events‚Äú, and to perform actions within that app.
+</code></pre>
+<p>The app is still ticked in the <code>Security &amp; Privacy &gt; Accessibility</code> menu but we need to untick and retick it in order to start using keyboard events again...</p>
+<p>One work around would be trying to not modify the application, however we quite like how the app is self-contained and we wouldn't be able to ensure the app doesn't change in the future (by one of the 3rd party applets installed on it).</p>
+<p>Is there anything else we can do to ensure the script we run always has permissions to <code>system events</code>?</p>
+",|macos|electron|javascript-automation|osascript|,TRUE,Usage
+67799208,show and hide google sheets separately for specific user,"<p>I am working on a google spreadsheet for my team members where they can save their logs so I have made a separate sheet for each of them but I do not want to let them see each others logs due to some privacy reasons.</p>
+<p>I am hiding sheets with the app script and associated them with the email address of the users. But  when any user opens his/her sheet then it works just fine, but if other users open their sheets then it get messed up.</p>
+<p>If user A open A1 rest other sheets are hidden, but when user B opens B1 then it gets rendered to user A also. I can't understand if its because the google spreadsheet has only one instance or its some fault in my code.</p>
+",|javascript|google-apps-script|google-sheets|,TRUE,Protection
+19855946,Turkey urlrewrite filter on Tomcat will not set P3P,"<p>I am trying to get Confluence 4.1.5 to work properly with IE 8, 9 and 10 with redirect from a SSO. In other words - we've hit the Privacy Policy issue (P3P). </p>
+
+<p>No, I'm not a Tomcat guy. But I found some references that (I believe) told me what to do: </p>
+
+<p><a href=""http://grokbase.com/t/tomcat/users/111exnp658/how-to-configure-tomcat-coyote-to-deliver-a-p3p-header-on-every-request"" rel=""nofollow"">http://grokbase.com/t/tomcat/users/111exnp658/how-to-configure-tomcat-coyote-to-deliver-a-p3p-header-on-every-request</a></p>
+
+<p><a href=""https://code.google.com/p/urlrewritefilter/"" rel=""nofollow"">https://code.google.com/p/urlrewritefilter/</a></p>
+
+<p>Based on this I was able to establish that Confluence standard installation both has: </p>
+
+<ul>
+<li>The urlrewrite filter jar in place</li>
+<li>The class set in web.xml</li>
+<li>An existing urlrewrite.xml with some stuff from Atlassian</li>
+</ul>
+
+<p>So I tried to add the following to the urlrewrite.xml file: </p>
+
+<pre><code>&lt;rule&gt;
+     &lt;from&gt;/*&lt;/from&gt;
+     &lt;set type=""response-header"" name=""P3P""&gt;CP=""NON DSP COR ADM OUR STP""&lt;/set&gt;
+&lt;/rule&gt;
+</code></pre>
+
+<p>This however did not work very well. 
+To test I inserted some spelling errors (!!) and got an error message in Confluence logs. So I know that the file is read. However, I do not understand why my p3p isn't set (I have verified with IE and Firefox. The p3p value set on e.g. www.w3.org is not similarly set when I navigate Confluence). </p>
+
+<p>I've opened a support case with Atlassian. But they basically state that ""this is not under the support agreement"" which I guess I kind of agree on. </p>
+
+<p>So - can someone guide me in the right direction? Will this never work? Am I missing a crucial part? </p>
+
+<p>Please not, for anyone answering, that I am really not acquainted with Tomcat at all, so consider me a Newb when you answer :)</p>
+
+<p>Thank you in advance.  </p>
+",|privacy|confluence|tuckey-urlrewrite-filter|p3p|,TRUE,Usage
+59102712,JBAS010473: Failed to load module for RA [webservice] and SSL configuration isn't working,"<p>I've been trying to work out how to retrieve data from a RESTful webservice in Red Hat JBoss Data Virtualization. Specifically I have to connect to a webservice that requires 2-way SSL/TLS. (2-way SSL is required since we are working with privacy-sensitive data) While trying this I've come across what I feel like are two separate problems.</p>
+<p>I have already tried reinstalling to get rid of these errors. For the installation process I first installed EAP 6.4. Afterwards I installed JBoss Data Virtualization on this EAP installation. I'm using the standalone version on a laptop with macOS version 10.13.6 since I'm just trying to prove that it's possible to use JDV with the mentioned datasource. I'm not able to get the logging details on the side of the API since it is a third party service.</p>
+<p>I'm really new to JDV so I feel like the problem lies within some simple detail I'm missing but I really don't know what it could be. I've been reading a lot of other posts with problems people are having but none of them seem to have the same problem as me. I would greatly appreciate it if someone were able to help me. I tried to provide as much information as possible, so let me know if you need something else, or if something is missing. The post was getting too long so instead of pasting the code here, links are provided to textfiles in my google drive. I've used three dots to show where I've hidden some information that I don't want to share, like the keystorepassword and the local file structure of my device.</p>
+<p>My problems are the following:</p>
+<ol>
+<li>Whenever I make a connection profile to any webservice I'm able to see the correct API-call results when making a sourcemodel, but when trying to deploy these on a VDB or preview the selected data in a sourcemodel or viewmodel, I get an error. When trying to deploy the VDB the error <code>JBAS010473: Failed to load module for RA [webservice]</code> is thrown. I can find the following in the .log file in the .metadata repository of my workspace.</li>
+</ol>
+<p><a href=""https://drive.google.com/file/d/1SEI5VDhqF5dIiTkkksqPBP3tvuln1Rja/view?usp=sharing"" rel=""nofollow noreferrer"">.log file</a></p>
+<ol start=""2"">
+<li>secondly when trying to make a sourcemodel of the api which requires 2-way SSL I get an <code>403 - Forbidden</code> return code from the API. According to the API documentation this means that the client is not authenticated to get the data from the API. In other words, something on my side of the handshake protocol isn't set up right. The client certificate probably isn't sent in the TLS handshake process. I'm providing the following <code>jbossws-cxf.xml</code> file to a connection profile in the webservice resource adapter.</li>
+</ol>
+<p><a href=""https://drive.google.com/file/d/1cI-wkUpcSv5gqvcHUfm3a9HfOhQFJa3p/view?usp=sharing"" rel=""nofollow noreferrer"">jbossws-cxf.xml file</a></p>
+<p>I've used the web console to configure the connection definition but I've provided the <code>standalone.xml</code> for this purpose: <a href=""https://drive.google.com/file/d/1opMT7ysEkj21gzrMHKH94Oo05sHmrU6s/view?usp=sharing"" rel=""nofollow noreferrer"">standalone.xml file</a></p>
+<p>The server logging during startup of the server is provided in the following file: <a href=""https://drive.google.com/file/d/1B3XcfbovTbFdSI5xpgqT7PEYb6x7ybyB/view?usp=sharing"" rel=""nofollow noreferrer"">server start terminal log.txt</a></p>
+",|jboss-eap-6|teiid|redhat-datavirt|,TRUE,Usage
+67735334,How to bypass Browser add-ons from Blocking Azure Application Insight Logs,"<p>I'm using Application Insights <a href=""https://www.npmjs.com/package/@microsoft/applicationinsights-react-js"" rel=""nofollow noreferrer"">JS SDK React Plugin</a> to log application insights data to Azure. This data publishing could get blocked by some browser extensions such as Ad Blocker, Privacy Badger, etc. In my case analytics got blocked by Privacy Badger while experimenting.</p>
+<p><a href=""https://i.stack.imgur.com/f03wK.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/f03wK.png"" alt=""enter image description here"" /></a></p>
+<p>I know it can be prevented by disabling relevant add-ons for the particular site from the browser. Just wondering is there a particular way to prevent this from implementation side without asking users to disable their add-ons.</p>
+",|reactjs|azure|azure-application-insights|,TRUE,Intention
+3861445,User‚Äôs activity history in iPhone,"<p>I want to make an app, wherein I have access to the following</p>
+
+<ul>
+<li>Logs: call log, message log, app usage log, media log, ...</li>
+<li>Logging data per activity: ex) call log: call direction, phone number, call
+duration, location, ...</li>
+<li>Privacy policy (logging policy, using policy of the log data, user
+consent policy, ...)</li>
+</ul>
+
+<p>Are there any APIs available to achieve above mentioned.</p>
+",|iphone|android-activity|,TRUE,Intention
+23594412,"How to secure username, password, api_keys","<p>We are building a rails application backed by mysql which will store sensitive information such as username, password, api_key which are specific to each logged in user. </p>
+
+<p>Is there a gem which will allow protection of such production data against stealing by internal team members or external folks.</p>
+
+<p>We don't want sensitive information to be printed in logs
+We should be able to prevent reverse engineering the sensitive data in case the data is stolen.</p>
+
+<p>How should we design the system to avoid the above scenarios.</p>
+",|mysql|ruby-on-rails|security|database-design|passwords|,TRUE,Concerns about content
+42836189,Saving data on phone in a Cordova app,"<p>I am making a mobile app using Cordova and I need to save some sensitive and not so sensitive data inside the phone. I am a bit lost on what is the best way to do it. </p>
+
+<p>I need to save:</p>
+
+<ol>
+<li>A JSON web-token (for authentication).</li>
+<li>A response from server (I save this to populate my page in case the GET request fails).</li>
+<li>Coordinates information when user is logging data to the app (for later upload to a server from with in the app). These will be many separate logs, and can be large in size for local storage ~5-10 MB.</li>
+</ol>
+
+<p>Till now i have been successfully saving everything I need to the local storage but I don't think that is the correct way to do it. So that is why I need some help in deciding what is the best course to take from security point of view.</p>
+
+<p>Saving server response is just for better UI experience and static in size so I guess local storage is a good option to use.
+But web-tokens and GPS logs is sensitive information and I dont want to keep it in the local storage as it is accessible from outside the app.
+What other options do I have?</p>
+
+<p><a href=""https://cordova.apache.org/docs/en/latest/guide/appdev/security/index.html#encrypted-storage"" rel=""nofollow noreferrer"">Cordova still doesn't have encrypted storage</a>.</p>
+
+<p>Is saving to <code>files</code> a good approach? This <a href=""http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-file/index.html#page-toc-source"" rel=""nofollow noreferrer"">here</a> says that data contained inside <code>cordova.file.applicationStorageDirectory</code> is private to the app.So can I use it to save the logs and the token?</p>
+
+<p>The <a href=""https://github.com/apache/cordova-plugin-file"" rel=""nofollow noreferrer"">plugin</a> also lists the file systems for Android and iOS and lists which of those are private. </p>
+
+<p>I am currently working with android phones but want to extend the app to iOS later. I have never worked with file systems and caches before so I am a bit lost.</p>
+",|apache|cordova|local-storage|storage|,TRUE,Concerns about content
+24404478,how to protect sensitive data in java,"<p>I am looking for suggestions on tools/methods can be used to make sure , in java source code, sensitive information (like user password) is not accidentally been logged/printout . </p>
+",|java|security|,TRUE,Replacement
+59299837,How to hide or mask the loggers(Database connect details) which is generate by Hibernate's API,"<p>In application log file, i have observed that hibernate logging apis are printing the Database connection information like password, so is there any way to hide or mask such sensitive information?</p>
+
+<p>eg. HHH000046: Connection properties:Connection properties: {user=&lt;####>, password=&lt;####>}</p>
+",|hibernate|,TRUE,Replacement
+59575077,Removing sensitive informations from the logs using regex,"<p>In my Ruby app I have the following regex that helps me with removing sensitive informations from logs:</p>
+
+<pre><code>/(\\""|"")secure[^:]+:\s*\1.*?\1/
+</code></pre>
+
+<p>It works when in logs are the following information:</p>
+
+<pre><code>{""secure_data"": ""Test""}
+</code></pre>
+
+<p>but when instead of string I have object in logs it does not work:</p>
+
+<pre><code>{""secure_data"": {""name"": ""Test""}}
+</code></pre>
+
+<p>How can I update regex to work with both scenarios?</p>
+
+<p><a href=""https://rubular.com/r/h9EBZot1e7NUkS"" rel=""nofollow noreferrer"">https://rubular.com/r/h9EBZot1e7NUkS</a></p>
+",|regex|rubular|,TRUE,Replacement
+29288115,Delete TeamCity Audit Log Entries?,"<p>How do I delete entries in the audit log? There is sensitive information that got entered and is able to be viewed in the compare feature. Thanks!</p>
+",|logging|continuous-integration|teamcity|teamcity-9.0|,TRUE,Concerns about content
+67364320,Directory browsing disable in IIS however application log files were disclosed within the ‚Äòlog‚Äô folder,"<p>I set the <code>Directory Browsing</code> to false in IIS. After that it is not possible to list files in directories on website. It works! However I can browse the file path through the http link. The following example screenshot below shows that sensitive information such as application log were disclosed within the ‚Äòlog‚Äô folder through directory listing of the web server</p>
+<p><a href=""https://i.stack.imgur.com/JnHqV.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/JnHqV.png"" alt=""enter image description here"" /></a></p>
+<p>How to disable file browsing also?</p>
+",|iis|owasp|directory-browsing|,TRUE,Concerns about content
+48380452,Mask out sensitive information in python log,"<p>Consider the following code</p>
+
+<pre><code>try:
+    r = requests.get('https://sensitive:passw0rd@what.ever/')
+    r.raise_for_status()
+except requests.HTTPError:
+    logging.exception(""Failed to what.ever"")
+</code></pre>
+
+<p>Here, if the endpoint returns non-successful http status code, the following will be logged</p>
+
+<pre><code>Traceback (most recent call last):
+  File ""a.py"", line 5, in &lt;module&gt;
+    r.raise_for_status()
+  File ""venv/lib/python3.5/site-packages/requests/models.py"", line 928, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://sensitive:passw0rd@what.ever/
+</code></pre>
+
+<p>The problem is that the <em>password</em> is logged. I could create a logging filter to filter out this line completely. However, it would be more convenient if the password was just masked out somehow. As no string is passed to <code>logging.exception</code> filtering on the app side is tricky. Where in the logging framwork can I transform a log record?</p>
+",|python|security|logging|python-logging|,TRUE,Replacement
+49139378,filter out info in nginx log_format,"<p>I want to log the <code>$request</code> coming in but want to filter out sensitive information such as passwords or keys.</p>
+
+<p>I tried the following and it doesn't work:</p>
+
+<pre><code>http {
+  log_format xxx '$filtered_request';
+
+  location /xxx {
+    set $filtered_request $request;
+    if ($filtered_request ~ (.*)password=[^&amp;]*(.*)) {
+      set $filtered_request $1password=****$2;
+    }
+
+    access_log /var/log/xxx.log xxx;
+  }
+}
+</code></pre>
+
+<p>This saves empty lines to the log file.</p>
+
+<p>In fact, the following doesn't work either:</p>
+
+<pre><code>http {
+  log_format yyy '$yyy';
+
+  location /foo {
+    set $yyy 'abc';
+    access_log /var/log/yyy.log yyy;
+  }
+}
+</code></pre>
+
+<p>The result is still empty lines.</p>
+
+<p>How to use custom variables in <code>log_format</code>?</p>
+
+<p>I'm using nginx/1.2.5</p>
+
+<p>UPDATE: I notice that the <code>set $yyy 'abc';</code> actually does something, but the value is not reflected in the log. i.e.:</p>
+
+<pre><code>http {
+  log_format yyy '$request $arg_password';
+  location /foo {
+    set $arg_password 'filtered';
+    access_log /var/log/yyy.log yyy;    
+  }
+}
+</code></pre>
+
+<p>The <code>$arg_password</code> becomes empty with the <code>set ...</code> statement, and log the arg <code>?password=asdf</code> as <code>asdf</code> if the <code>set ...</code> statement is commented out.</p>
+",|nginx|nginx-location|nginx-log|,TRUE,Replacement
+49143855,Masking sensitive data before getting logged - log4j,"<p>For logging purposes, instead of using <code>toString()</code> method, Jackson's <code>writeValueAsString(object)</code> method has been used in the project I have been working for.</p>
+
+<pre><code>LOGGER.info(mapper.writeValueAsString(object));
+</code></pre>
+
+<p>Now, I got the requirement to mask the sensitive information like passwords and credit card numbers in logs. If <code>toString()</code> is being used, I could have removed those sensitive data from the <code>toString()</code> method. But in my case, I could not find such simple yet correct way of getting my problem solved. I am not in a situation where I can change the entire thing to use <code>toString()</code> too.</p>
+
+<p>I read that by using <code>%replace</code> method, I can replace the data which I don't need to be logged in using a predefined pattern. But all the sensitive data that need to be masked wont follow a single pattern.</p>
+
+<p>I tried by intercepting the log event, look for the particular information and mask them(Using a class which implements <code>LogEventFactory</code>). Even though it is a working solution, I don't think that it is a good solution since looking for the data in big strings every time is gonna cost. </p>
+
+<p>Is there any way that I haven't come across yet to get my problem resolved? Is the approach with <code>%replace</code> is the way to go? If so, how? </p>
+",|java|log4j|log4j2|data-masking|,TRUE,Replacement
+71414552,Ruby regex for masking sensitive information,"<p>I have a rails project and I am using gem <code>http_logger</code> and I need to mask sensitive information in the request headers and request body and response.</p>
+<pre><code>Rails.application.config.filter_parameters
+</code></pre>
+<p>do not work in this because because I make a request outside of rails request in a separate thread.</p>
+<p>I need a way to replace &quot;access_token&quot; and &quot;client_secret&quot; within a string with [FILTERED]</p>
+<p>Example strings:</p>
+<pre><code>Response body   {&quot;access_token&quot;:[FILTERED],&quot;scope&quot;:&quot;create:foo&quot;,&quot;expires_in&quot;:86400,&quot;token_type&quot;:&quot;Bearer&quot;}
+</code></pre>
+<p>or</p>
+<pre><code>Request body   {&quot;client_id&quot;:&quot;fn23uf32u9f34&quot;,&quot;client_secret&quot;:[FILTERED],&quot;audience&quot;:&quot;audience&quot;,&quot;grant_type&quot;:&quot;client_credentials&quot;}
+</code></pre>
+<p>I am fine having two separate regular expressions for both cases.</p>
+",|ruby-on-rails|ruby|,TRUE,Replacement
+45567874,Masking data from exception message while logging,"<p>If any exception occurs in the code, we have logged the exception using the logback logger.
+While logging we have directly passed the exception object e to the error method.</p>
+
+<p>The exception which has been thrown from a third party jar contains sensitive information like username and password. 
+Currently, we have the username and password as the private field in the code. But it does not seem appropriate to check for check log message do string comparison and then log.</p>
+
+<p>As the exception is thrown by the third party API, fixed pattern for the exception is not known. That's why we are not able to use the %replace.</p>
+
+<p>What is a good way to mask the sensitive data in the exception?</p>
+",|java|exception|logging|,TRUE,Concerns about content
+40932874,Bunyan logger clean message before logging,"<p>I am using bunyan to log all sorts of informations, errors etc. There are a few times when the log message contains sensitive information that I don't want to log. Is there any way to filter the log message in the bunyan logger before actually logging?</p>
+",|node.js|bunyan|,TRUE,Replacement
+40116088,Remove fields from JSON dynamically using Json.Net,"<p>I have some JSON input, the shape of which I cannot predict, and I have to make some transformations (to call it something) so that some fields are not logged. For instance, if I have this JSON:</p>
+
+<pre><code>{
+    ""id"": 5,
+    ""name"": ""Peter"",
+    ""password"": ""some pwd""
+}
+</code></pre>
+
+<p>then after the transformation it should look like this:</p>
+
+<pre><code>{
+    ""id"": 5,
+    ""name"": ""Peter""
+}  
+</code></pre>
+
+<p>The above sample is trivial, but the actual case is not so happy/easy. I will have some regular expressions and if any field(s) on the <em>input JSON</em> matches that, then it shouldn't be on the result. I will have to go recursively in case I have some nested objects. I've been seeing some stuff on <em>LINQ to JSON</em> but I have found nothing satisfying my needs.</p>
+
+<p>Is there a way of doing this?</p>
+
+<p><em>Note</em>:
+This is part of a logging library. I can use the JSON string if necessary or easier. The thing is that at some point in my logging pipeline I get the object (or string as required) and then I need to strip the sensitive data from it, such as <em>passwords</em>, but also any other client-specified data.</p>
+",|c#|json|json.net|,TRUE,Replacement
+40454993,"NSPhotoLibraryUsageDescription key added to info.plist, still crashing due to privacy sensitive data","<p>Trying to follow the FoodTracker Apple tutorial. xCode 8.1. I get this crashlog:</p>
+
+<pre><code>2016-11-06 16:49:17.922832 FoodTracker[2307:660318] [access] This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre>
+
+<p>(lldb) </p>
+
+<p>I have read several posts on missing privacy keys in iOS 10, and so I added the required key...</p>
+
+<p>Privacy - Photo Library Usage Description</p>
+
+<p>...and a custom message under the value column. Yet I still get the same crash when I tap the image. Any help would be great. I would love to finish this tutorial.</p>
+
+<p>Thanks!</p>
+
+<p>INFO:</p>
+
+<p>I cannot include a screenshot of my info.plist yet, so here is the link to a screenshot:</p>
+
+<p><a href=""https://www.dropbox.com/s/wwgz5uca5klxjen/Screen%20Shot%202016-11-06%20at%204.13.56%20PM.png?dl=0"" rel=""nofollow noreferrer"">screenshot of info.plist</a></p>
+
+<p>Here is my ViewController.swift just in case:</p>
+
+<pre><code>import UIKit
+
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+// MARK: Properties
+
+@IBOutlet weak var nameTextField: UITextField!
+@IBOutlet weak var mealNameLabel: UILabel!
+@IBOutlet weak var photoImageView: UIImageView!
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    nameTextField.delegate = self
+}
+
+// MARK: UITextFieldDelegate
+func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool {
+
+    // Hide the keyboard
+    textField.resignFirstResponder()
+
+    return true
+}
+
+func textFieldDidEndEditing(_ textField: UITextField) {
+
+    mealNameLabel.text = textField.text
+}
+
+// MARK: UIImageControllerDelegate
+func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+
+    dismiss(animated: true, completion: (nil))
+}
+
+func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+
+    let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+    photoImageView.image = selectedImage
+    dismiss(animated: true, completion: (nil))
+}
+
+// MARK: Actions
+@IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+
+    nameTextField.resignFirstResponder()
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.sourceType = .photoLibrary
+    imagePickerController.delegate = self
+    present(imagePickerController, animated: true, completion: nil)
+}
+
+@IBAction func setDefaultLabelText(_ sender: UIButton) {
+
+    mealNameLabel.text = ""Default Text""
+}
+}
+</code></pre>
+",|ios|swift|xcode|info.plist|,TRUE,Usage
+60265776,Make jackson fail on serialization attempt of a class,"<p>Is there is any simple way to make Jackson fail to serialize a specific class?</p>
+
+<p>Basically I want to make sure that class containing some sensitive data doesn't leak anywhere and since we log both in text and json I'm afraid it may end up getting logged as json as a part of some bigger object. (sure I could make it serialize to <code>*****</code> string, but I think error makes it more clear that it's not supposed to even be used there).</p>
+
+<p>My only idea right now is custom Serizalizer that just throws an exception but I was wondering if there is some simpler way to tell Jackson to stay away from that class.</p>
+",|java|jackson|,TRUE,Concerns about content
+42372756,How to prevent sensitive variable values from logging?,"<p>Using the action ""Set a variable"" for sensitive data like passwords or something else logs the values to the logfile. Is there a way to prevent this behavior for this kind of variables? We are using install4j version 6.0.4. I also tried to create a custom action but setting the variable with <code>context.setVariable(...)</code> has the same effect and produce a log entry like <code>Variable changed: my.password=abc123[class java.lang.String]</code>. We need to avoid this log entries.</p>
+",|install4j|,TRUE,Replacement
+23594412,"How to secure username, password, api_keys","<p>We are building a rails application backed by mysql which will store sensitive information such as username, password, api_key which are specific to each logged in user. </p>
+
+<p>Is there a gem which will allow protection of such production data against stealing by internal team members or external folks.</p>
+
+<p>We don't want sensitive information to be printed in logs
+We should be able to prevent reverse engineering the sensitive data in case the data is stolen.</p>
+
+<p>How should we design the system to avoid the above scenarios.</p>
+",|mysql|ruby-on-rails|security|database-design|passwords|,TRUE,Concerns about content
+42836189,Saving data on phone in a Cordova app,"<p>I am making a mobile app using Cordova and I need to save some sensitive and not so sensitive data inside the phone. I am a bit lost on what is the best way to do it. </p>
+
+<p>I need to save:</p>
+
+<ol>
+<li>A JSON web-token (for authentication).</li>
+<li>A response from server (I save this to populate my page in case the GET request fails).</li>
+<li>Coordinates information when user is logging data to the app (for later upload to a server from with in the app). These will be many separate logs, and can be large in size for local storage ~5-10 MB.</li>
+</ol>
+
+<p>Till now i have been successfully saving everything I need to the local storage but I don't think that is the correct way to do it. So that is why I need some help in deciding what is the best course to take from security point of view.</p>
+
+<p>Saving server response is just for better UI experience and static in size so I guess local storage is a good option to use.
+But web-tokens and GPS logs is sensitive information and I dont want to keep it in the local storage as it is accessible from outside the app.
+What other options do I have?</p>
+
+<p><a href=""https://cordova.apache.org/docs/en/latest/guide/appdev/security/index.html#encrypted-storage"" rel=""nofollow noreferrer"">Cordova still doesn't have encrypted storage</a>.</p>
+
+<p>Is saving to <code>files</code> a good approach? This <a href=""http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-file/index.html#page-toc-source"" rel=""nofollow noreferrer"">here</a> says that data contained inside <code>cordova.file.applicationStorageDirectory</code> is private to the app.So can I use it to save the logs and the token?</p>
+
+<p>The <a href=""https://github.com/apache/cordova-plugin-file"" rel=""nofollow noreferrer"">plugin</a> also lists the file systems for Android and iOS and lists which of those are private. </p>
+
+<p>I am currently working with android phones but want to extend the app to iOS later. I have never worked with file systems and caches before so I am a bit lost.</p>
+",|apache|cordova|local-storage|storage|,TRUE,Concerns about content
+24404478,how to protect sensitive data in java,"<p>I am looking for suggestions on tools/methods can be used to make sure , in java source code, sensitive information (like user password) is not accidentally been logged/printout . </p>
+",|java|security|,TRUE,Replacement
+63076909,How to write logs for specific environments only?,"<p>Are there any options other than using preprocessor directives to enable / disable logging depending on the environment variable? I don't want sensitive data from the production environment to go into the logs.
+So it turns out that each environment will have its own configuration.</p>
+<pre><code>public class Service
+{
+    private readonly Serilog.ILogger logger;
+
+    public Service(ILogger logger)
+    {
+        this.logger = logger;
+    }
+
+    public void DoSomething()
+    {
+#if DEBUG
+        // if it's a development environment
+        this.logger
+            .ForContext(&quot;Debug data&quot;, data)
+            .Information(&quot;something happened&quot;);
+#endif
+        // if it's a production environment
+        this.logger.Information(&quot;something happened&quot;);
+    }
+}
+</code></pre>
+",|c#|logging|serilog|,TRUE,Concerns about content
+43885953,Spring log request payload,"<p>I want to log every incoming request data and payload(body). How to configure that in Spring Boot? And how to hide sensitive data like password in logs?</p>
+
+<p>Is it possible to log the original 'raw' request body (e.g. JSON)?</p>
+",|spring-mvc|spring-boot|,TRUE,Replacement
+59111583,log4j2 java classes do not load application.properties entries with spring boot,"<p>I am using log4j2(log4j-core and log4j-api) with Spring boot 2.2.0.RELEASE. I want to masking sensitive data inmy json payload in the logs. I have written a custom LogMaskingConverter which extends LogEventPatternConverter. </p>
+
+<pre><code>@Plugin(name = ""LogMaskingConverter"", category = ""Converter"")
+@ConverterKeys({ ""spi"", ""trscId"" })
+@Configuration
+public class LogMaskingConverter extends LogEventPatternConverter {
+    @Value(""${maskingFields}"")
+    private String maskingFields;
+
+    protected LogMaskingConverter(String name, String style) {
+        super(name, style);
+    }
+
+    public static LogMaskingConverter newInstance(String[] options) {
+        return new LogMaskingConverter(""spi"", Thread.currentThread().getName());
+    }
+    @Override
+    public void format(LogEvent event, StringBuilder outputMessage) {
+        ........
+    }
+    private String mask(String message) {
+       ....
+     }
+</code></pre>
+
+<p>The problem is that the maskingFields does not get loaded from the application properties file.I read that log4j2 gets loaded before spring boot. Hence I have renamed my xml to log4j2-spring.xml so that spring boot is the first to intialise and load all the properties before it gets read via LogMaskingConverter.</p>
+
+<p>Also below are my pom.xml dependencies related to log4j2</p>
+
+<pre><code>&lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+            &lt;exclusions&gt;
+                &lt;exclusion&gt;
+                    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                    &lt;artifactId&gt;spring-boot-starter-logging&lt;/artifactId&gt;
+                &lt;/exclusion&gt;
+            &lt;/exclusions&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-log4j2&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre>
+
+<p>To summarise below code does not fetch any values:</p>
+
+<pre><code>@Value(""${maskingFields}"")
+private String maskingFields;
+</code></pre>
+",|spring-boot|log4j2|,TRUE,Replacement
+39678071,iOS 10: sharing image/save image started crashing,"<p>I have a code which shares a line of text and an image via UIActivityViewController. After I updated to iOS 10 it started crashing with the following log: </p>
+
+<blockquote>
+  <p>This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.</p>
+</blockquote>
+
+<p>I do not post the code since it seems to happen even in Apple's own example. I found a corresponding <a href=""https://openradar.appspot.com/27988819"" rel=""nofollow noreferrer"">radar</a>, but not StackOverflow topic. </p>
+
+<p>Hope it will save someone's time. The fix is to add that line to your plist even though the app itself does not interact with the Photo Library. If anyone finds a better solution, it would be nice.</p>
+
+<p>Please, note that it is different from a <a href=""https://stackoverflow.com/questions/37925583/uiimagepickercontroller-crashes-app-swift3-xcode8"">problem with UIImagePickerController</a> - it is close to an opposite action. </p>
+",|ios|share|uiactivityviewcontroller|,TRUE,Usage
+39695161,ionic 2 image-picker xcode 8 upgrade - Info.plist permissions error,"<p>Just upgraded to xcode 8 and it appears to break my app on open album, see below for error log. I have uninstalled and installed a number of times, also tried updating my ionic install.</p>
+
+<blockquote>
+  <p>NOTE: After the xcode 8 upgrade, i had to reinstall ios-sim &amp;
+  ios-deploy (again) as it wasn't being found.</p>
+</blockquote>
+
+<pre><code>ccd[1426]: [access] Refusing TCCAccessRequest for service kTCCServicePhotos and client /Users//Library/Developer/CoreSimulator/Devices/268F812D-B91E-40A2-943B-7DCF6548CF18/data/Containers/Bundle/Application/2FCEDD36-41B6-47A8-B49D-49DC356DA9C3/myAPP_V2.app/myAPP_V2 without NSPhotoLibraryUsageDescription key
+
+V2[1491]: [access] This app has crashed because it attempted to access privacy-sensitive data without a usage description. The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre>
+",|iphone|ionic-framework|ionic2|xcode8|,TRUE,Usage
+39722755,How to make an exception message safe,"<p>I have a diagnostics log which is available for viewing from a view within an MVC application.</p>
+
+<p>The reason for this is that it is difficult to get access to the server, but a dashboard type application can help engineers more easily diagnose issues remotely.</p>
+
+<p>The problem is that this may fail penetration testing as the view includes Exception logging detail. One way of solving this is to not allow logging of exceptions but this will prevent engineers from investigating what caused an error.</p>
+
+<p>So how do I ensure that it is safe enough from prying eyes if the MVC app is compromised? For example, exception logging includes the stack trace which could include sensitive info as to implementation details which could help hackers compromise the system.  Also the exception could include sensitive database information. </p>
+
+<p>Really we need some way of passing the exception through a filter which can trim off possible detail. What is the best/standard approach for achieving this?</p>
+",|c#|.net|security|exception|,TRUE,Concerns about content
+59371046,Prevent hibernate to log sensitive date,"<p>I have some sensitive data in the application which I want to prevent Hibernate log them in its log.
+For example in the log file users will see the following data:</p>
+
+<pre><code>TRACE 2019-09-28 12:52:32,398 -4f03-a316-b4320901fe56 - 127.1.1.0:61097 - thread:[http-bio-8300-exec-3] - org.hibernate.type.descriptor.sql.BasicBinder.bind@82:
+                binding parameter [1] as [VARCHAR] - 60125987
+</code></pre>
+
+<p>In my application <strong>60125987</strong> is a sensitive data that is not to log. Another sample is:</p>
+
+<pre><code>DEBUG 2019-09-28 12:52:32,415 - 4f03-a316-b4320901fe56 - 127.1.1.0:61097 - thread:[http-bio-8300-exec-3] - org.hibernate.loader.Loader.getRow@1322:
+                result row: EntityKey[com.entity.EPerson#component[code,privateNo]{privateNo=153339, code=3}]
+</code></pre>
+
+<p>In this log, <strong>privateNo</strong> is sensitive data. 
+In conclusion, I don't want to disable Hibernate log although I want to control some data will not be logged or will log as masked or hashed.</p>
+",|hibernate|logback|,TRUE,Replacement
+39975320,Unity Prime31 prompt for photo is crashing on iOS 10 and XCode 8,"<p>Calling EtceteraBinding.promptForPhoto resulting in immediate crash on iOS 10.</p>
+
+<pre><code>public void TakePhotoTapped() {
+
+    #if UNITY_IOS
+    EtceteraBinding.promptForPhoto(0.2f, PhotoPromptType.Camera, 0.8f, true);
+    #endif
+
+}
+</code></pre>
+
+<p>Xcode spits out this log. It does look like some sort of permission issue? Please help.</p>
+
+<pre><code>2016-10-11 11:46:35.758167 xxx[1643:458841] invalid mode 'kCFRunLoopCommonModes' provided to CFRunLoopRunSpecific - break on _CFRunLoopError_RunCalledWithInvalidMode to debug. This message will only appear once per execution.
+2016-10-11 11:46:49.760643 xxx[1643:458841] [MC] System group container for systemgroup.com.apple.configurationprofiles path is /private/var/containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+2016-10-11 11:46:49.768609 xxx[1643:458841] [MC] Reading from public effective user settings.
+2016-10-11 11:47:02.450381 xxx[1643:459135] [access] This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSCameraUsageDescription key with a string value explaining to the user how the app uses this data.
+</code></pre>
+",|ios|xcode|unity-game-engine|prime31|,TRUE,Usage
+40803964,How to prevent sensitive data from being logged by SyncInvoker.post?,"<p>I'm sending a request with a following code:</p>
+
+<pre><code>final WebTarget target = client.target(url);
+CustomResponse response = target.request(MediaType.APPLICATION_XML_TYPE)
+                          .post(Entity.xml(password), CustomResponse.class);
+</code></pre>
+
+<p>Authentication is designed to accept username as a part of <code>url</code> while password is sent in request body.</p>
+
+<p>The issue is that password is shown in logs which are generated by class <code>ClientRequest#writeEntity()</code> inside <code>javax.ws.rs</code> library.</p>
+
+<p>So, my question is how force that library not to store password in logs without turning logging off?</p>
+
+<p>Thank you.</p>
+",|java|logging|javax.ws.rs|javax|,TRUE,Concerns about content
+59741103,Masking Sensitive Data in CXF Logging SOAP Requests,"<p>After using CXF to call a SOAP webservice, CXF client logs the SOAP request message with password visible! I want to hide sensitive data like passwords from the CXF client logging.</p>
+
+<p>Here's what I got in log: </p>
+
+<pre><code>&lt;soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/""&gt;
+  &lt;soap:Body&gt;
+    &lt;runReport xmlns=""http://xmlns.oracle.com/oxp/service/MYSERVICE""&gt;
+       &lt;userID&gt;username&lt;/userID&gt;
+       &lt;password&gt;mypassword&lt;/password&gt;
+    &lt;/runReport&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+
+<p>All I want is to replace <code>mypassword</code> to <code>**********</code></p>
+
+<p>I tried this <a href=""https://stackoverflow.com/questions/23212313/cxf-logging-request-response-with-content-filtering-or-masking-soap-fields/23214151"">solution</a> but it won't work with my CXF version because it uses an older version of CXF.</p>
+
+<p>I really saw many examples, ones that extends LoggingOutInterceptor, other extends AbstractSoapInterceptor, other extends PhaseInterceptorChain and others... and I really don't know where to start, I couldn't find any documentation on this matter.</p>
+
+<p>Any help, link to doc will be appreciated!</p>
+",|java|spring-boot|logging|soap|cxf|,TRUE,Replacement
+48096160,"Mask email address, phonenumber, ssn (pattern) using awk","<p>Requirement is to mask some sensitive data from the log file, below code works as expected when <code>awk</code> version is <strong>4.0.2</strong>. </p>
+
+<p>I will be <code>grep</code>ing the log files and then have to mask some data using pattern as mentioned in the below <code>awk</code> snippet and then return the result.</p>
+
+<pre><code>echo ""123-123-432-123-999-889 and 123456 and 1234-1234-4321-1234 and xyz@abc.com"" | awk ' gsub (/[0-9]{6,}|([0-9]{3,}.){3,}|\w{2,}@\w{2,}.\w{2,}/, ""****"") 1'
+</code></pre>
+
+<p>The same is not working in <code>awk</code> version <strong>3.1.7</strong> which is production server version.</p>
+
+<p>I can use only <code>grep, cat, awk</code> and there is <strong>no permission to use <code>perl</code> or <code>sed</code></strong> as it is restricted by Admin Team.</p>
+
+<p><strong>Expected Output:</strong></p>
+
+<pre><code>****and **** and ****and ****
+</code></pre>
+
+<p>Solution should also work if the content is in file, for example</p>
+
+<h2><strong>sample.log</strong></h2>
+
+<pre><code>123-123-432-123-999-889
+and 
+123456
+and
+1234-1234-4321-1234 
+and xyz@abc.com
+</code></pre>
+
+<p><strong>Command:</strong> </p>
+
+<pre><code> cat sample.log  | awk ' gsub (/[0-9]{6,}|([0-9]{3,}.){3,}|\w{2,}@\w{2,}.\w{2,}/, ""****"") 1'
+</code></pre>
+
+<p>Please help me with awk which can work in <strong>3.1.7</strong> version of <code>awk</code></p>
+",|bash|shell|awk|grep|cat|,TRUE,Replacement
+48105704,java (log4j) logging filter by object type,"<p>I have a logging statement currently implemented with log4j: </p>
+
+<pre><code>log.info(""Failed to create message for {}"", CustomerData);
+</code></pre>
+
+<p>This will log some sensitive data in <code>CustomerData</code>.</p>
+
+<p>Is there a way to block logging of any instances of <code>CustomerData</code>? Maybe in log4j configuration or via a custom filter?</p>
+
+<p>If not possible with log4j, how about other logging frameworks?</p>
+",|java|logging|filter|log4j|,TRUE,Concerns about content
+48504337,Modify Log Request Payload in Spring Boot,"<p>How can we modify and log request payload in Spring-boot?</p>
+
+<p>I have already implemented <strong>CommonsRequestLoggingFilter</strong> and am able to log the payload but want to modify the request before being logged so I can hide some sensitive data in the log.</p>
+",|java|spring|spring-boot|logging|,TRUE,Replacement
+49143855,Masking sensitive data before getting logged - log4j,"<p>For logging purposes, instead of using <code>toString()</code> method, Jackson's <code>writeValueAsString(object)</code> method has been used in the project I have been working for.</p>
+
+<pre><code>LOGGER.info(mapper.writeValueAsString(object));
+</code></pre>
+
+<p>Now, I got the requirement to mask the sensitive information like passwords and credit card numbers in logs. If <code>toString()</code> is being used, I could have removed those sensitive data from the <code>toString()</code> method. But in my case, I could not find such simple yet correct way of getting my problem solved. I am not in a situation where I can change the entire thing to use <code>toString()</code> too.</p>
+
+<p>I read that by using <code>%replace</code> method, I can replace the data which I don't need to be logged in using a predefined pattern. But all the sensitive data that need to be masked wont follow a single pattern.</p>
+
+<p>I tried by intercepting the log event, look for the particular information and mask them(Using a class which implements <code>LogEventFactory</code>). Even though it is a working solution, I don't think that it is a good solution since looking for the data in big strings every time is gonna cost. </p>
+
+<p>Is there any way that I haven't come across yet to get my problem resolved? Is the approach with <code>%replace</code> is the way to go? If so, how? </p>
+",|java|log4j|log4j2|data-masking|,TRUE,Replacement
+69269562,Mask sensitive data via annotation using log4j,"<p>I use log4j2 in my Spring Boot project. When log event happens I want to mask sensitive data in my DTO using annotation, for example:</p>
+<pre><code>@Sensitive(fields = {password, email})
+public class MyDTO {
+
+   private String name;
+   private String email;
+   private String password
+
+}
+</code></pre>
+<p>I want to have opportunity to set fields to mask in annotation props.</p>
+<p>I tried to use custom serialiser for this, but I do not want to  mask data every time when I serialise my DTO, only when logging event happens.</p>
+<p>I tried to apply RewritePolicy, but in this case I already have logging message as String and I can't access class to grab annotation params to know what fields should be masked.</p>
+<p>It would be grate to handle log event before myDto.toString() method invoked, get annotation from class, check fields to mask and replace them before set log message.</p>
+<p>Could you please help me?</p>
+",|java|spring-boot|log4j|,TRUE,Replacement
+50365654,jasypt encryption not working in spring boot,"<p>I want to do encryption for some sensitive data in application.properties file of spring boot application.</p>
+
+<p>for that I have used jasypt-spring-boot-starter plugin .</p>
+
+<p>also used <code>@EnableEncryptableProperties</code> tag on spring application.</p>
+
+<p>I have encrypted access key for my database and written its encrypted value in the property file.</p>
+
+<pre><code>com.test.SharedAccessKey=ENC(vfQQ9veC1G+RV8BC0VA==)
+</code></pre>
+
+<p>also provided in property file</p>
+
+<pre><code>jasypt.encryptor.password=secretpassword
+jasypt.encryptor.algorithm=PBEWithMD5AndDES
+</code></pre>
+
+<p>I am accessing this property in spring boot application as followes</p>
+
+<pre><code>@Value(""${com.test.SharedAccessKey}"")
+public String shareAcessKey;
+</code></pre>
+
+<p>But logger.info(shareAcessKey) print as it is ENC(vfQQ9veC1G+RV8BC0VA==)</p>
+
+<p>what I am missing in above , can anyone help.</p>
+",|spring|spring-boot|jasypt|,TRUE,Usage
+3656761,Hibernate log4j.properties print DB uname & pass,"<p>My story is as follows.
+I have a java app with hibernate connected to a embedded db(derby).
+The funny thing was, that my hibernate app printed the uname at start, because i was using slf4j-simple, and so i set my App to use log4j.</p>
+
+<p>Hibernate db uname&amp;pass are set in code, using property object.
+I tried using the same trick on log4j property configurator, but the log4j.properties file overide my property object.
+But the log4j.properties file is easily changed, and the main quiestion is.
+Can log4j be set to print my db uname&amp;pass, or any of the sensitive data used in my Hibernate config in the App???</p>
+",|java|hibernate|properties|log4j|,TRUE,Intention
+32330354,Hiding sensitive data from logcat,"<p><a href=""https://i.stack.imgur.com/7fg83.jpg"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/7fg83.jpg"" alt=""this is my logcat view""></a>
+am developing an android app,after compiled the apk it is showing the http url of my server in logcat!how to hide the sensitive data from logcat</p>
+
+<p><code>libcore.net.http.HttpURLConnectionImpl:http://127.0.0.1/...</code> this is how it is showing the link</p>
+",|android|,TRUE,Replacement
+71406931,Does the ToString() method of the following concrete exception types yield sensitive data?,"<p>Despite searching exhaustively, I couldn¬¥t find a discussion of the mentioned question. Please point me to the question if there¬¥s any.</p>
+<p>Now to my question. I¬¥d like to log the output of the <code>ToString()</code> method of the following  concrete exceptions (they aren¬¥t custom exceptions, i.e., I didn¬¥t write them myself) into a file:</p>
+<ul>
+<li>ArgumentNullException</li>
+<li>System.Exception itself</li>
+<li>SecurityTokenException and exceptions that inherit from SecurityTokenException (e.g.,
+SecurityTokenExpiredException)</li>
+</ul>
+<p>Is it save to do so, i.e., doesn¬¥t <code>ToString()</code> return senstive data that might have caused the exception in the first place?</p>
+<p>According to the <a href=""https://learn.microsoft.com/en-us/dotnet/api/system.exception.tostring?view=net-6.0#system-exception-tostring"" rel=""nofollow noreferrer"">docs</a>, <code>System.Exception.ToString()</code> returns the following output:</p>
+<blockquote>
+<p>The default implementation of ToString obtains the name of the class
+that threw the current exception, the message, the result of calling
+ToString on the inner exception, and the result of calling
+Environment.StackTrace. If any of these members is null, its value is
+not included in the returned string.</p>
+</blockquote>
+<p>Examining the <a href=""https://learn.microsoft.com/en-us/dotnet/api/system.environment.stacktrace?view=net-6.0"" rel=""nofollow noreferrer"">Environment.Stacktrace</a> yields (if I understood it correctly) the following information:</p>
+<ul>
+<li>StackTrace doesn¬¥t contain senstive data (only method parameter names not their values)</li>
+<li>Name of the class is fine (no senstive data here!)</li>
+<li>InnerEception.ToString() follows the definition of <code>ToString()</code> above. Hence, it should be fine too.</li>
+</ul>
+<p>Does the <a href=""https://learn.microsoft.com/en-us/dotnet/api/system.exception.message?view=net-6.0"" rel=""nofollow noreferrer"">Message</a> property of the mentioned exceptions yield senstive data (e.g., parameter values, content of JwtSecurityToken etc.)? Can the pure unchanged output of the message proeprty be logged savely (I know there¬¥s encryption but independent of that)?</p>
+",|c#|security|exception|error-logging|,TRUE,Concerns about content
+45567874,Masking data from exception message while logging,"<p>If any exception occurs in the code, we have logged the exception using the logback logger.
+While logging we have directly passed the exception object e to the error method.</p>
+
+<p>The exception which has been thrown from a third party jar contains sensitive information like username and password. 
+Currently, we have the username and password as the private field in the code. But it does not seem appropriate to check for check log message do string comparison and then log.</p>
+
+<p>As the exception is thrown by the third party API, fixed pattern for the exception is not known. That's why we are not able to use the %replace.</p>
+
+<p>What is a good way to mask the sensitive data in the exception?</p>
+",|java|exception|logging|,TRUE,Concerns about content
+40874391,Mule Logging for sensitive Data,"<p>I am Logging the Request Json Message on Mule and it is showing all the information as i m using to print the complete Payload. How can i mask or Hide sensitive data from the Mule Logger</p>
+
+<pre><code>   &lt;logger message=""Loin Request,#[message.payloadAs(java.lang.String)]""  level=""INFO"" doc:name=""Request Input""/&gt;
+</code></pre>
+
+<p>Sample Request:</p>
+
+<pre><code>    {
+  ""credentials"": {
+    ""userId"": ""test1234@yopmail.com"",
+    ""password"": ""test12345""
+  },
+  ""sessionID"": 1234567890,
+  ""includecheckout"": true
+}
+</code></pre>
+
+<p>I am expecting to print in the log as below.</p>
+
+<pre><code>{
+  ""credentials"": {
+    ""userId"": ""test1234@yopmail.com"",
+    ""password"": ""xxxxxxxxxx""
+  },
+  ""sessionID"": 1234567890,
+  ""includecheckout"": true
+}
+</code></pre>
+",|logging|mule|mule-component|,TRUE,Replacement
+40933902,cordova-plugin-crosswalk-webview - Logging all UI interaction - including sensitive data,"<p>This is an edited question - have got to the root of the problem so have added my own answer. 
+Logcat was was outputting nearly every interaction with the UI, including what was typed our a password box (start of the word ""password"" highlighted with **):</p>
+
+<pre><code>D/cr_Ime  (10392): [ImeAdapter.java:313] showSoftKeyboard
+D/cr_Ime  (10392): [InputMethodManagerWrapper.java:47] showSoftInput
+D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [] [0 0] [-1 -1] [true]
+D/cr_Ime  (10392): [ImeAdapter.java:387] dispatchKeyEvent: action [0], keycode [44]
+D/cr_Ime  (10392): [AdapterInputConnection.java:393] sendKeyEvent [0] [44] [112]
+D/cr_Ime  (10392): [AdapterInputConnection.java:239] updateSelectionIfRequired [1 1] [-1 -1]
+D/cr_Ime  (10392): [InputMethodManagerWrapper.java:74] updateSelection: SEL [1, 1], COM [-1, -1]
+D/cr_Ime  (10392): [ImeAdapter.java:253] updateKeyboardVisibility: type [2-&gt;2], flags [66], show [false], 
+**D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [p] [1 1] [-1 -1] [false]
+D/cr_Ime  (10392): [ImeAdapter.java:387] dispatchKeyEvent: action [1], keycode [44]
+D/cr_Ime  (10392): [AdapterInputConnection.java:393] sendKeyEvent [1] [44] [112]
+D/cr_Ime  (10392): [ImeAdapter.java:387] dispatchKeyEvent: action [0], keycode [29]
+D/cr_Ime  (10392): [AdapterInputConnection.java:393] sendKeyEvent [0] [29] [97]
+D/cr_Ime  (10392): [AdapterInputConnection.java:239] updateSelectionIfRequired [2 2] [-1 -1]
+D/cr_Ime  (10392): [InputMethodManagerWrapper.java:74] updateSelection: SEL [2, 2], COM [-1, -1]
+D/cr_Ime  (10392): [ImeAdapter.java:253] updateKeyboardVisibility: type [2-&gt;2], flags [66], show [false], 
+**D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [‚Ä¢a] [2 2] [-1 -1] [false]
+D/cr_Ime  (10392): [ImeAdapter.java:387] dispatchKeyEvent: action [1], keycode [29]
+D/cr_Ime  (10392): [AdapterInputConnection.java:393] sendKeyEvent [1] [29] [97]
+D/cr_Ime  (10392): [ImeAdapter.java:387] dispatchKeyEvent: action [0], keycode [47]
+D/cr_Ime  (10392): [AdapterInputConnection.java:393] sendKeyEvent [0] [47] [115]
+D/cr_Ime  (10392): [AdapterInputConnection.java:239] updateSelectionIfRequired [3 3] [-1 -1]
+D/cr_Ime  (10392): [InputMethodManagerWrapper.java:74] updateSelection: SEL [3, 3], COM [-1, -1]
+D/cr_Ime  (10392): [ImeAdapter.java:253] updateKeyboardVisibility: type [2-&gt;2], flags [66], show [false], 
+**D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [‚Ä¢‚Ä¢s] [3 3] [-1 -1] [false]
+</code></pre>
+
+<p>In the mix <code>sendKeyEvent</code> is also outputting the ASCII/UTF code of the keypress. This is happening on both a Genymotion emulated device and an actual device - both using a release apk. In release mode this behaviour is even more stark- just the **'d log entries above are outputted, making it really easy to see what the password is:</p>
+
+<pre><code>**D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [p] [3 3] [-1 -1] [false]
+**D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [‚Ä¢a] [3 3] [-1 -1] [false]
+**D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [‚Ä¢‚Ä¢s] [3 3] [-1 -1] [false]
+**D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [‚Ä¢‚Ä¢‚Ä¢s] [3 3] [-1 -1] [false]
+**D/cr_Ime  (10392): [AdapterInputConnection.java:174] updateState [‚Ä¢‚Ä¢‚Ä¢‚Ä¢s] [3 3] [-1 -1] [false]
+</code></pre>
+
+<p>Etc...</p>
+",|cordova|cordova-plugins|crosswalk|cordova-plugin-proguard|,TRUE,Concerns about content
+24224017,Android AppStateManager :: Internal data leak within a DataBuffer object detected,"<p>I am using AppState to store my current Android application data. When I call the
+<code>load</code> method and set a callback listener i see the following in my logcat output.
+</p>
+
+<blockquote>
+  <p>Internal data leak within a DataBuffer object detected!  Be sure to
+  explicitly call close() on all DataBuffer extending objects when you
+  are done with them.
+  (com.google.android.gms.appstate.AppStateBuffer@45454128)</p>
+</blockquote>
+
+<p></p>
+
+<p>
+
+This is my method call (I am not explicitly opening any buffers)
+
+</p>
+
+<pre><code>AppStateManager
+    .load(getApiClient(), APP_STATE_STATE_KEY)
+    .setResultCallback(new ResultCallback&lt;AppStateManager.StateResult&gt;() {
+        @Override
+        public void onResult(final StateResult stateResult) {
+        }
+    });
+</code></pre>
+
+<p>e.g. The <code>onResult()</code> method is empty, so why do i see this logcat entry?
+What buffer do i need close?</p>
+",|android|google-play-services|,TRUE,Usage
+59647500,Migrating from MySQL plain database values to fully AES encrypted values (PHP APi),"<p><strong>Short:</strong></p>
+
+<p>Best way to migrate from plain-text database values to fully/entirely encrypted values due to GDPR regulations?</p>
+
+<p><strong>Explainer:</strong></p>
+
+<p>I just received a ""heads-up"" that due to the new ""Privacy by design"" concept legally required by the GDPR (The EU General Data Protection Regulation) all 'sensitive' information is required to be encrypted. This includes names, addresses, social media profiles, .. </p>
+
+<p>We are currently running a full production database for 2000+ users, only accessible via our PHP REST API that is used as entry point for all web and mobile application (no third-party developers yet). This database contains email addresses, addresses, social media handles, names, ip-addresses .. that are currently stored in plain-text (except for security-based sensitive information like the passwords, tokens,.. or any other value used for authentication/identification).</p>
+
+<p>I'm not a big fan of this (development wise) because of the mayor impact on performance, search algorithms, the whole PHP API etc (feels like an end of the whole optimized and ""perfectly setup database""), but since it's required and since it's an extra layer of protection, I'm all in for it. </p>
+
+<p>Now, my main concern is.. everything is actively running and we can't just say ""okay, shutting down the server, encrypt everything, deploy the new API version and turn it back on again."". Also, this migration can't be done ""step by step along the way"" I think, everything has to be done all at once. The database values can't be encrypted if the API isn't ready to handle decryption within all queries, and vice-versa, the database can't be plain text if the API is expecting everything to be encrypted.</p>
+
+<p>(I'm glad I went for the whole API type of deal to be the only point of entry/read for the database, no custom scripts/connections, so this is a relieve)</p>
+
+<p>We're running a highly overpowered VPS server, so a bit of performance-loss due to redundant checks and whatnot is an option and we're running staging/dev environments as well, so testing is no issue.</p>
+
+<p>I would let MySQL handle the AES with a unique key for every record that is based on a combination of the ID (primary key) and the creation timestamp for example (both values that will never change) (which might not be that smart of an idea in case ""for some reason"" this value does changes, the data is gone.. so not sure about that), so that my PHP application doesn't need to communicate the key in plain text when running queries, but then again, the 'creation of the key for decryption' will still be visible within the query logs etc, so the ""most secure"" way would be to let the PHP application encrypt and decrypt all incoming/outgoing data, but this would result in not being able to run 'search queries' for example (unless I send the key within those specific queries..).</p>
+
+<p><strong>My question:</strong></p>
+
+<p>How would one go about this..? Should I let PHP handle the en/decryption or preferable MySQL? Is there a usable way to migrate to encrypted values along the way when the record gets requested? ..?</p>
+
+<p>My idea was to no touch any database values (except for updating every non-integer column to handle 2-3x the amount of characters that are currently specified) which can be done without having an impact on production. Then updating all the API queries, step by step, to check if the selected value is encrypted or not. And when one section is running OK, update the table for that section to encrypt all the values. As a (simple) example</p>
+
+<p>MySQL-way; Every SELECT query:</p>
+
+<pre><code>SELECT IF_AES_ENCRYPTED(first_name, AES_DECRYPT(first_name), first_name) AS first_name FROM contacts WHERE id = 1;
+</code></pre>
+
+<p>(or) PHP-way: Retrieving of data:</p>
+
+<pre><code>while ($row = $result-&gt;fetch_assoc()) {
+  $contact-&gt;setFirstName((IS_AES_ENCRYPTED($row['first_name']) ? AES_DECRYPT($row['first_name']) : $row['first_name']);
+}
+</code></pre>
+
+<p>At the end of the deployment:</p>
+
+<pre><code>UPDATE contacts SET first_name = AES_ENCRYPT(first_name);
+</code></pre>
+
+<p>There are definitely ways to accomplish this, but since I'm the only developer here at this point, I'm just not sure what would be the most practical/efficient way to do this or if I'm over- or under thinking this or not. Just looking for other developers out there that have executed a migration/update like this.</p>
+
+<p>Thanks, Bert.</p>
+",|php|mysql|encryption|migration|,TRUE,Concerns about content
+2654220,Logging SELECT statements in PostgreSQL 8.4,"<p>I've got a table which contains sensitive data and according to data protection policy we have to keep a record of every read/write of the data including a row identifier and the user who accessed the table. The writing is no issue using triggers but triggers aren't supported for <code>SELECT</code> statements.</p>
+
+<p>What's the best method of doing this? I've looked at rules but I can't get them to <code>INSERT</code> into a table, and I've tried logging every query but this doesn't seem to log <code>SELECT</code> statements. Ideally for security I'd like to keep the log within a table on the database but logging to a file is fine too.</p>
+
+<p>Thanks,<br />
+David</p>
+",|sql|postgresql|logging|select|rules|,TRUE,Protection
+50843706,Data protection in ASP.NET Core 2.1 only works on one machine,"<p>I'm using the <a href=""https://learn.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/overview?view=aspnetcore-2.1&amp;tabs=aspnetcore2x"" rel=""noreferrer"">ASP.NET Core Data Protection system</a> to encrypt data with Application A and decrypt it with Application B.</p>
+<p>Encryption and decryption both work when run on the development machine, but when Application B is moved to the production machine it's no longer able to decrypt because the <a href=""https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectioncommonextensions.unprotect?view=aspnetcore-2.1"" rel=""noreferrer"">IDataProtector.Unprotect</a> method throws an exception:</p>
+<blockquote>
+<p>System.InvalidOperationException: The key ring does not contain a
+valid default protection key. The data protection system cannot create
+a new key because auto-generation of keys is disabled.</p>
+</blockquote>
+<p>Here's the code I'm using to configure decryption in Application B:</p>
+<pre><code>sKeysPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), &quot;Keys&quot;);
+
+services.AddDataProtection()
+    .SetApplicationName(&quot;My Application&quot;) // Application A sets this same name
+    .PersistKeysToFileSystem(new DirectoryInfo(sKeysPath))
+    .ProtectKeysWithCertificate(&quot;634D3F23...&quot;)
+    //.ProtectKeysWithCertificate(x509Certificate2) // I've tried using an X509 certificate parameter but it gives the same result as providing the thumbprint of the one in the certificate store
+    .DisableAutomaticKeyGeneration(); // Application A is the master key generator so do not generate keys
+</code></pre>
+<p>The production machine does contain the same Keys folder (with .pfx and .xml files) and same keys installed in the Windows certificate store.</p>
+<p>As I understand it, by providing the certificate file to the Data Protection system, it should work on any machine and not be binded to a specific machine or Windows user. Is that assumption incorrect or is there an issue with the way I'm performing decryption?</p>
+<p>Here are some more detailed logging messages:</p>
+<blockquote>
+<p><code>2018-06-13 16:32:32.6750 | TRACE | Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector | 5 | Performing unprotect operation to key {846541...} with purposes ('My Application', 'My Purpose').</code></p>
+<p><code>2018-06-13 16:32:32.6750 | DEBUG | Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository | 37 | Reading data from file 'C:\inetpub\wwwroot\My Website\Keys\key-846541....xml'.</code></p>
+<p><code>2018-06-13 16:32:32.6750 | DEBUG | Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager | 18 | Found key {846541...}.</code></p>
+<p><code>2018-06-13 16:32:32.6750 | DEBUG | Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver | 13 | Considering key {846541...} with expiration date 2038-01-18 20:54:13Z as default key.</code></p>
+<p><code>2018-06-13 16:32:32.6750 | DEBUG | Microsoft.AspNetCore.DataProtection.TypeForwardingActivator | Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.EncryptedXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.EncryptedXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60</code></p>
+<p><code>2018-06-13 16:32:32.7051 | ERROR | Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager | 24 | An exception occurred while processing the key element '&lt;key id=&quot;846541...&quot; version=&quot;1&quot; /&gt;'. Internal.Cryptography.CryptoThrowHelper+WindowsCryptographicException: Keyset does not exist</code></p>
+<p><code>2018-06-13 16:32:32.7051 | TRACE | Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager | 25 | An exception occurred while processing the key element '&lt;key id=&quot;846541...&quot; version=&quot;1&quot; /&gt;...</code></p>
+<p><code>2018-06-13 16:32:32.7051 | WARN | Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver | 12 | Key {846541...} is ineligible to be the default key because its CreateEncryptor method failed. Internal.Cryptography.CryptoThrowHelper+WindowsCryptographicException: Keyset does not exist</code></p>
+<p><code>2018-06-13 16:32:32.7051 | DEBUG | Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver | 14 | Key {846541...} is no longer under consideration as default key because it is expired, revoked, or cannot be deciphered.</code></p>
+<p><code>2018-06-13 16:32:32.7051 | DEBUG | Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver | 53 | Repository contains no viable default key. Caller should generate a key with immediate activation.</code></p>
+<p><code>2018-06-13 16:32:32.7051 | DEBUG | Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider | 57 | Policy resolution states that a new key should be added to the key ring.</code></p>
+<p><code>2018-06-13 16:32:32.7051 | ERROR | Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider | 49 | The key ring does not contain a valid default key, and the key manager is configured with auto-generation of keys disabled.</code></p>
+<p><code>2018-06-13 16:32:32.7051 | ERROR | Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider | 48 | An error occurred while reading the key ring. System.InvalidOperationException: The key ring does not contain a valid default protection key. The data protection system cannot create a new key because auto-generation of keys is disabled.</code></p>
+</blockquote>
+",|c#|asp.net-core|dpapi|,TRUE,Usage
