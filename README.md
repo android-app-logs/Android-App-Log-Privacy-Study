@@ -1,0 +1,1 @@
+This repository contains the code and data related to our research paper on privacy in Android logs. Since the raw data contains our personal information and will reveal our identity, the raw data will be made public after the paper is accepted.
